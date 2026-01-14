@@ -21,6 +21,7 @@ public class Customers_Controller {
 
     @PostMapping //Rota para enviar
     public Customers_model create(@RequestBody Customers_model customersModel) {return customersService.save(customersModel);}
+
     
 
 }

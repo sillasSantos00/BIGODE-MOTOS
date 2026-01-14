@@ -26,12 +26,15 @@ public class Customers_Service {
         if (customersRepository.existsByTelefone(customersModel.getTelefone())){
             throw new ResponseStatusException(HttpStatus.CONFLICT, "telefone ja existe no banco ");
         }
+        if (customersRepository.existsAllByEmail(customersModel.getEmail())){
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "email ja cadastrado no banco ");
+        }
 
 
         return customersRepository.save(customersModel);
     }
 }
-s
+
 
 
 

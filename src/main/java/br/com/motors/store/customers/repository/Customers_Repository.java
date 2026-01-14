@@ -9,4 +9,6 @@ public interface Customers_Repository extends JpaRepository<Customers_model, Lon
     boolean existsByCpf(String cpf);
 
     boolean existsByTelefone(String telefone);
+
+    boolean existsAllByEmail(String emeail);
 }
