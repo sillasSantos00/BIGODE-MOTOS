@@ -10,3 +10,5 @@ import jakarta.validation.constraints.NotBlank;
 //private String Ano_I_fa;
 //private String marca;
 //private String valor;
+
+//basicamente e um atalho pra enviar nomes para nota fiscal , vou colocar somente oque quero puxar do mode

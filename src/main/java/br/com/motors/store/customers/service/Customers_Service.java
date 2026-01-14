@@ -14,6 +14,9 @@ public class Customers_Service {
     private final Customers_Repository customersRepository;
 
     public Customers_Service(Customers_Repository customersRepository) {this.customersRepository = customersRepository;}
+    public void delete(Long id) {
+        customersRepository.deleteById(id);
+    }
 
     //listar
     public List<Customers_model> getAll() {return  customersRepository.findAll();
@@ -29,9 +32,9 @@ public class Customers_Service {
         if (customersRepository.existsAllByEmail(customersModel.getEmail())){
             throw new ResponseStatusException(HttpStatus.CONFLICT, "email ja cadastrado no banco ");
         }
-
-
         return customersRepository.save(customersModel);
+
+
     }
 }
 
