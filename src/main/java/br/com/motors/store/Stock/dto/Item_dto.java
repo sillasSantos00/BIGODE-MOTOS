@@ -1,6 +1,4 @@
-package br.com.motors.store.sales_items.dto;
-
-import jakarta.validation.constraints.NotBlank;
+package br.com.motors.store.Stock.dto;
 
 //public record// I/tem_dto {
  //   @NotBlank String

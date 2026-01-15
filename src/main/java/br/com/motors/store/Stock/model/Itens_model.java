@@ -1,35 +1,43 @@
-package br.com.motors.store.sales_items.model;
+package br.com.motors.store.Stock.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "itens")
 
 public class Itens_model {
     @Id
-    @GeneratedValue
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String modelo;
-    private String Ano_I_fa;
+    private String Ano_fa;
     private String marca;
     private String valor;
+    private String chassi;
 
 
 
-    public Itens_model(Long id, String modelo, String ano_I_fa, String marca, String valor) {
+
+    public Itens_model(Long id, String modelo, String ano_I_fa, String marca, String valor, String shassi) {
         this.id = id;
         this.modelo = modelo;
-        this.Ano_I_fa = ano_I_fa;
+        this.Ano_fa = ano_I_fa;
         this.marca = marca;
         this.valor = valor;
+        this.chassi = shassi;
     }
 
-    public Itens_model() {
+    public Itens_model(String shassi) {
 
+        this.chassi = shassi;
+    }
+
+    public String getShassi() {
+        return chassi;
+    }
+
+    public void setShassi(String shassi) {
+        this.chassi = shassi;
     }
 
     public Long getId() {
@@ -48,12 +56,12 @@ public class Itens_model {
         this.modelo = modelo;
     }
 
-    public String getAno_I_fa() {
-        return Ano_I_fa;
+    public String getAno_fa() {
+        return Ano_fa;
     }
 
-    public void setAno_I_fa(String ano_I_fa) {
-        Ano_I_fa = ano_I_fa;
+    public void setAno_fa(String ano_fa) {
+        Ano_fa = ano_fa;
     }
 
     public String getMarca() {
